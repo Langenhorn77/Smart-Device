@@ -15,12 +15,12 @@
   }
 
   &__item {
+    position: relative;
     width: 570px;
     min-height: 299px;
     padding: 40px 42px 49px 44px;
     border: 1px solid #EBEBEB;
     box-sizing: border-box;
-    border-left: 3px solid #00B2FF;
     margin-bottom: 30px;
 
     & svg {
@@ -40,6 +40,17 @@
     & p {
       font-size: 16px;
       line-height: 22px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-color: #00b2ff;
+
     }
 
     &:hover {
@@ -93,7 +104,6 @@
 
     &__item {
       width: calc(50% - 15px);
-      border-left: 2px solid #00B2FF;
       padding: 23px 20px 23px 25px;
       min-height: 232px;
 
@@ -104,6 +114,10 @@
 
       & p {
         margin: 0;
+      }
+
+      &::before {
+        width: 2px;
       }
     }
 

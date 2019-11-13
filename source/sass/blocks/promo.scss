@@ -1,4 +1,4 @@
-.about {
+.promo {
   width: 1440px;
   position: relative;
   margin-left: auto;
@@ -79,7 +79,7 @@
 
 @media (max-width: $tablet-width) {
 
-  .about {
+  .promo {
     width: 100%;
     padding-top: 75px;
     box-sizing: border-box;
@@ -117,7 +117,7 @@
 }
 
 @media (max-width: $mobile-width) {
-  .about {
+  .promo {
     padding: 205px 16px 70px 17px;
 
     & h1 {
