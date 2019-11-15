@@ -1,80 +1,117 @@
 .promo {
   width: 1440px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 175px;
-  box-sizing: border-box;
   padding-left: 10px;
   padding-bottom: 275px;
-  /*background-image: url("../img/board.png");
-  background-repeat: no-repeat;
-  background-position: top 170px right -65px;
-  overflow: visible;*/
+  padding-top: 175px;
+  box-sizing: border-box;
 
-  /*&::before {
+  &::before {
     content: "";
     position: absolute;
-    top: 170px;
-    right: -58px;
-    width: 705px;
-    height: 515px;
-    background-image: url("../img/board.png");
+    top: 382px;
+    right: 0;
+    width: 45.86%;
+    height: 377px;
+    background-image: url("../img/poligon-small.svg");
+    background-position: top 0 left 10px;
     background-repeat: no-repeat;
-  }*/
-
-  & h1 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 80px;
-    line-height: 94px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-bottom: 28px;
+    z-index: 1;
   }
 
-  & p {
-    position: relative;
-    left: 100px;
-    margin: 0;
-    width: 663px;
-    letter-spacing: 0.025em;
-    font-size: 21px;
-    line-height: 35px;
-    color: #FFFFFF;
-  }
-
-  & p::before {
+  &::after {
     content: "";
     position: absolute;
-    top: 18px;
-    left: -96px;
-    width: 66px;
-    height: 2px;
-    background: #FFFFFF;
+    top: 118px;
+    right: 0;
+    width: 44.2%;
+    height: 640px;
+    background-image: url("../img/poligon-large.svg");
+    background-position: top 0 left 21px;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+
+  &__wrapper {
+    position: relative;
+
+
+
+    & h1 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 80px;
+      line-height: 94px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 28px;
+    }
+
+    & p {
+      position: relative;
+      left: 100px;
+      margin: 0;
+      width: 663px;
+      letter-spacing: 0.025em;
+      font-size: 21px;
+      line-height: 35px;
+      color: #FFFFFF;
+    }
+
+    & p::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: -96px;
+      width: 66px;
+      height: 2px;
+      background: #FFFFFF;
+    }
   }
 
   &__button {
     width: 407px;
     height: 55px;
-    background-color: #00B2FF;
-    border-radius: 5px;
-    border: none;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #FFFFFF;
     margin-left: 97px;
     margin-top: 42px;
+    border: none;
+
+    @include button-style();
+
+    &:hover {
+      background-color: #FFFFFF;
+      color: #00b2ff;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 
   &__button-text--mobile {
     display: none;
   }
+
+  &__image {
+    overflow: hidden;
+    width: 48.95%;
+    position: absolute;
+    top: 256px;
+    right: 0;
+    z-index: 3;
+
+    & img {
+      position: relative;
+      left: 65px;
+    }
+  }
+
 }
 
 @media (max-width: $tablet-width) {
@@ -84,27 +121,49 @@
     padding-top: 75px;
     box-sizing: border-box;
     padding-left: 87px;
-    padding-bottom: 163px;
+    padding-bottom: 19px;
 
-    & h1 {
-      font-size: 60px;
-      line-height: 70px;
-      width: 350px;
+    &::before {
+      top: 21px;
+      right: -216px;
+      width: 294px;
+      height: 299px;
+      background-image: url("../img/poligon-small.svg");
+      display: none;
     }
 
-    & p {
-      font-size: 18px;
-      line-height: 28px;
-      width: 356px;
-      letter-spacing: 0.005em;
-      top: 1px;
-      left: 50px;
+    &::after {
+      top: -37px;
+      width: 45.86%;
+      right: 0;
+      height: 501.8px;
+      background-image: url("../img/poligon-large.svg");
+      background-size: 501.8px 501.8px;
+      background-position: top 0 left 36px;
     }
 
-    & p::before {
-      top: 17px;
-      left: -46px;
-      width: 33px;
+    &__wrapper {
+
+      & h1 {
+        font-size: 60px;
+        line-height: 70px;
+        width: 350px;
+      }
+
+      & p {
+        font-size: 18px;
+        line-height: 28px;
+        width: 356px;
+        letter-spacing: 0.005em;
+        top: 1px;
+        left: 50px;
+      }
+
+      & p::before {
+        top: 17px;
+        left: -46px;
+        width: 33px;
+      }
     }
 
     &__button {
@@ -113,6 +172,16 @@
       margin-top: 57px;
     }
 
+    &__image {
+      top: 112px;
+      right: 0;
+
+      & img {
+        width: 465px;
+        height: 340px;
+        left: 115px;
+      }
+    }
   }
 }
 
@@ -120,23 +189,30 @@
   .promo {
     padding: 205px 16px 70px 17px;
 
-    & h1 {
-      width: 277px;
-      font-size: 40px;
-      line-height: 47px;
-    }
+    &__wrapper {
+      width: 100%;
 
-    & p {
-      width: 245px;
-      font-size: 16px;
-      line-height: 25px;
-      top: -2px;
-      left: 50px;
-    }
+      & h1 {
+        width: 277px;
+        font-size: 40px;
+        line-height: 47px;
+        position: relative;
+        z-index: 5;
+      }
 
-    & p::before {
-      top: 15px;
-      left: -50px;
+      & p {
+        width: 245px;
+        font-size: 16px;
+        line-height: 25px;
+        top: -2px;
+        left: 50px;
+      }
+
+      & p::before {
+        top: 15px;
+        left: -50px;
+      }
+
     }
 
     &__button {
@@ -152,5 +228,18 @@
     &__button-text--mobile {
       display: block;
     }
+
+    &__image {
+      width: 301px;
+      top: 92px;
+      right: 0;
+
+      & img {
+        width: 301px;
+        height: 220px;
+        left: 8px;
+      }
+    }
+
   }
 }

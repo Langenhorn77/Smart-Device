@@ -60,11 +60,20 @@
     color: #FFFFFF;
     display: flex;
     align-items: center;
+
+    &:hover {
+      color: #00b2ff;
+    }
+
+    &:active {
+      color: #788891;
+    }
   }
 
   &__menu-item svg {
     display: block;
     margin-right: 18px;
+    fill: #00b2ff;
   }
 
   &__menu-item--mail svg {
@@ -99,6 +108,18 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover {
+      color: #00b2ff;
+      border: 1px solid #00b2ff;
+    }
+
+    &:active {
+      color: #788891;
+      border: 1px solid #788891;
+      outline: none;
+    }
   }
 }
 
@@ -125,6 +146,14 @@
 
     &__menu-item svg {
       margin-right: 0;
+
+      &:hover {
+        fill: #FFFFFF;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
     }
 
     &__menu-item--mail svg {
