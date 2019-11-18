@@ -16,3 +16,17 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlay--closed {
+  display: none;
+}

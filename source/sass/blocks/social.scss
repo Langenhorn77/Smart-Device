@@ -1,0 +1,21 @@
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 113px;
+
+  &__link {
+    display: block;
+    width: 27px;
+    height: 27px;
+
+    & svg {
+      width: 27px;
+      height: 27px;
+      fill: #CDCDCD;
+
+      &:hover {
+        fill: #00b2ff;
+      }
+    }
+  }
+}

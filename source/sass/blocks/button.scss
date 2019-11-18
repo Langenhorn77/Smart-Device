@@ -1,0 +1,41 @@
+.button {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  &--closed {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 1px;
+      background-color: #C4C4C4;
+      top: 7.5px;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 16px;
+      background-color: #C4C4C4;
+      top: 0;
+      left: 7.5px;
+    }
+  }
+
+  &--opened {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 1px;
+      background-color: #C4C4C4;
+      top: 7.5px;
+      left: 0;
+    }
+  }
+}

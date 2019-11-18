@@ -13,11 +13,11 @@
     content: "";
     position: absolute;
     top: 382px;
-    right: 0;
-    width: 45.86%;
+    left: 50%;
+    width: 50%;
     height: 377px;
     background-image: url("../img/poligon-small.svg");
-    background-position: top 0 left 10px;
+    background-position: top 0 left 70px;
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -26,20 +26,18 @@
     content: "";
     position: absolute;
     top: 118px;
-    right: 0;
-    width: 44.2%;
+    left: 50%;
+    width: 50%;
     height: 640px;
     background-image: url("../img/poligon-large.svg");
-    background-position: top 0 left 21px;
+    background-position: top 0 left 105px;
     background-repeat: no-repeat;
     z-index: 1;
   }
 
 
   &__wrapper {
-    position: relative;
-
-
+    width: 100%;
 
     & h1 {
       font-family: "Roboto Condensed", sans-serif;
@@ -49,14 +47,15 @@
       text-transform: uppercase;
       color: #FFFFFF;
       margin-bottom: 28px;
+      text-align: left;
     }
 
     & p {
       position: relative;
       left: 100px;
       margin: 0;
-      width: 663px;
-      letter-spacing: 0.025em;
+      width: 633px;
+      letter-spacing: 0.5px;
       font-size: 21px;
       line-height: 35px;
       color: #FFFFFF;
@@ -121,25 +120,22 @@
     padding-top: 75px;
     box-sizing: border-box;
     padding-left: 87px;
-    padding-bottom: 19px;
+    padding-bottom: 162px;
 
     &::before {
-      top: 21px;
-      right: -216px;
-      width: 294px;
-      height: 299px;
-      background-image: url("../img/poligon-small.svg");
-      display: none;
+      top: 170px;
+      width: 50%;
+      height: 294.5px;
+      background-size: 294.5px 294.5px;
+      background-position: top 0 left 56px;
     }
 
     &::after {
       top: -37px;
-      width: 45.86%;
-      right: 0;
+      width: 50%;
       height: 501.8px;
-      background-image: url("../img/poligon-large.svg");
       background-size: 501.8px 501.8px;
-      background-position: top 0 left 36px;
+      background-position: top 0 left 81px;
     }
 
     &__wrapper {
@@ -188,6 +184,20 @@
 @media (max-width: $mobile-width) {
   .promo {
     padding: 205px 16px 70px 17px;
+
+    &::before {
+      top: 155px;
+      height: 281px;
+      background-size: 281px 281px;
+      background-position: top 0 left -8px;
+    }
+
+    &::after {
+      top: -45px;
+      height: 479.4px;
+      background-size: 479.4px 479.4px;
+      background-position: top 0 left 16px;
+    }
 
     &__wrapper {
       width: 100%;
