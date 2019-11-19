@@ -5,16 +5,17 @@
   border: none;
   padding: 0;
 
+  &::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 1px;
+    background-color: #C4C4C4;
+    top: 7.5px;
+    left: 0;
+  }
+
   &--closed {
-    &::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 1px;
-      background-color: #C4C4C4;
-      top: 7.5px;
-      left: 0;
-    }
 
     &::after {
       content: "";
@@ -27,15 +28,4 @@
     }
   }
 
-  &--opened {
-    &::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 1px;
-      background-color: #C4C4C4;
-      top: 7.5px;
-      left: 0;
-    }
-  }
 }

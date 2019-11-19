@@ -2,6 +2,7 @@
   width: 100%;
   padding-top: 48px;
   position: relative;
+  flex: 0 0 auto;
 
   &::before {
     content: "";
@@ -47,7 +48,7 @@
   }
 
   &__logo-name {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-weight: 700;
     font-size: 25px;
     line-height: 29px;
@@ -57,7 +58,7 @@
   }
 
   &__logo-description {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", "Tahoma", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -100,7 +101,7 @@
       flex-wrap: wrap;
       padding-left: 25px;
       padding-right: 24px;
-      padding-bottom: 40px;
+      padding-bottom: 14px;
     }
 
     &__container {
@@ -183,7 +184,7 @@
       width: 100%;
       padding-right: 14px;
       margin-top: 13px;
-      padding-bottom: 26px;
+      padding-bottom: 0;
       border-bottom: 1px solid rgba(98, 105, 98, 0.2);
     }
   }

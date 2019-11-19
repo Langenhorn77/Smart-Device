@@ -28,7 +28,7 @@
     }
 
     & h3 {
-      font-family: "Roboto Condensed", sans-serif;
+      font-family: "Roboto Condensed", "Tahoma", sans-serif;
       font-weight: 400;
       font-size: 24px;
       line-height: 34px;
@@ -90,7 +90,7 @@
 
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $desktop-width-min) {
   .advantages {
     width: 100%;
     padding-left: 25px;

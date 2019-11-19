@@ -1,9 +1,16 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: "PT Mono", "Tahoma", sans-serif;
   font-weight: 400;
   color: #666666;
   min-width: 320px;
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .visually-hidden {
@@ -28,5 +35,9 @@ body {
 }
 
 .overlay--closed {
+  display: none;
+}
+
+.menu-closed ul {
   display: none;
 }

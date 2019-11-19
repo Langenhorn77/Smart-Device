@@ -2,7 +2,7 @@
   width: 617px;
 
   &__name {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 16px;
@@ -37,6 +37,14 @@
       line-height: 25px;
       color: #1B2D37;
       opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -46,8 +54,12 @@
     width: 50%;
 
     &__list {
-      max-height: none;
       flex-wrap: nowrap;
+      min-height: 200px;
+    }
+
+    &__item {
+      width: 100%;
     }
   }
 }
@@ -68,7 +80,6 @@
     }
 
     &__list {
-      display: none;
       margin-bottom: 20px;
     }
   }
