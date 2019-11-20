@@ -128,6 +128,14 @@
     color: #FFFFFF;
     opacity: 0.5;
     transform: rotate(-90deg);
+
+    &:hover {
+      color: #00B2FF;
+    }
+
+    &:active {
+      opacity: 0.2;
+    }
   }
 }
 

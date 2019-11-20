@@ -29,6 +29,8 @@
 
   &__item {
     width: 308.5px;
+    position: relative;
+    z-index: 15;
 
     & a {
       text-decoration: none;
