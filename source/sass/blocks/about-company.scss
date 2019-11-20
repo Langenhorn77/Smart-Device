@@ -58,41 +58,31 @@
     }
 
     &__year {
-      font-family: "Roboto Condensed", "Tahoma", sans-serif;
-      font-weight: 700;
-      font-size: 156.248px;
-      line-height: 156.248px;
-
       display: block;
       position: absolute;
-      width: 115px;
-      height: 305px;
+      width: 120px;
+      height: 315px;
       top: 87px;
       left: 3px;
-      background: url("../img/year-bg.jpg");
+      background-image: url("../img/2005.jpg");
       background-repeat: no-repeat;
-      background-size: 100% 100%;
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-
-
-      & p {
-        transform: rotate(-90deg);
-        position: absolute;
-        margin: 0;
-        top: 73px;
-        left: -98px;
-        -webkit-transition: text-shadow 1s ease;
-        text-shadow: 0 0 1px rgba(0, 0, 0, .1);
-        color: #fff;
-      }
+      background-size: cover;
+      background-position: right -66px top -6px;
     }
   }
 
-
-@media (max-width: $desktop-width-min) {
+@media (max-width: $desktop-width) {
   .about-company {
     width: 100%;
+    max-width: 1170px;
+  }
+}
+
+
+@media (max-width: $tablet-width) {
+  .about-company {
+    width: 100%;
+    max-width: 100%;
 
     &__mobile-text {
       display: inline;
@@ -119,16 +109,11 @@
     }
 
     &__year {
-      font-size: 178.324px;
-      top: 0px;
+      top: 0;
       left: 25px;
       width: 136px;
-      height: 365px;
-
-      & p {
-        top: 100px;
-        left: -112px;
-      }
+      height: 360px;
+      background-position: right -80px top -2px;
     }
   }
 }

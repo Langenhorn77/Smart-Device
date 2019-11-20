@@ -5,7 +5,8 @@
   padding: 30px 40px 36px 40px;
   position: fixed;
   background-color: #00b2ff;
-  top: 137px;
+  /*top: 137px;*/
+  top: calc((100vh - 605px) / 2);
   left: calc(50% - 245px);
   z-index: 10;
 
@@ -61,6 +62,17 @@
       left: 10.7px;
       transform: rotate(45deg);
     }
+
+    &:hover {
+      &::before {
+        background-color: #1B2D37;
+      }
+
+      &::after {
+        background-color: #1B2D37;
+      }
+    }
+
   }
 
   &__form {
@@ -108,6 +120,7 @@
       border: 1px solid #FFFFFF;
       font-size: 14px;
       line-height: 16px;
+      cursor: pointer;
 
       &:hover {
         border: 1px solid #00b2ff;
@@ -140,6 +153,11 @@
       width: 340px;
       margin-left: 48px;
       margin-top: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: #1B2D37;
+      }
     }
 
     & input + label .checkbox-indicator {
@@ -151,6 +169,7 @@
       box-sizing: border-box;
       border: 1px solid #FFFFFF;
       background-color: #00b2ff;
+
     }
 
     & input:checked + label .checkbox-indicator {

@@ -7,6 +7,19 @@
   margin-left: auto;
   margin-right: auto;
 
+  & a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: #00B2FF;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
 
   &__wrapper {
     display: flex;
@@ -28,10 +41,21 @@
   }
 }
 
+@media (max-width: $desktop-width) {
+  .copyright {
+    width: 100%;
+
+    &__wrapper {
+      width: 56.59%;
+      min-width: 750px;
+    }
+  }
+}
+
 @media (max-width: $tablet-width) {
   .copyright {
     width: 100%;
-    padding: 17px 25px 24px 25px;
+    padding: 21px 25px 24px 25px;
 
     &__desktop-text {
       display: none;
@@ -39,6 +63,7 @@
 
     &__wrapper {
       width: 50%;
+      min-width: 220px;
     }
   }
 }

@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="Description" content="Author: Y.S. Chursin, Liga A testtask">
   <title>Smart Device</title>
   <link rel="stylesheet" href="css/style.min.css">
-
 </head>
-
 <body>
 <div class="page-content">
   <div class="page-wrapper">
@@ -48,10 +47,11 @@
       <div class="promo__wrapper">
         <h1>Печатные платы</h1>
         <p>производство и монтаж, поставка комплектующих, блоков&nbsp;и&nbsp;модулей</p>
-        <button class="promo__button">
+        <a href="#" class="promo__link">Скролл вниз</a>
+        <a class="promo__button" href="#">
           <span class="promo__button-text promo__button-text--desktop">Получить бесплатную консультацию</span>
           <span class="promo__button-text promo__button-text--mobile">Бесплатная консультация</span>
-        </button>
+        </a>
       </div>
       <div class="promo__image">
         <img src="img/board.png" height="515" width="705" alt="Печатная плата"/>
@@ -109,7 +109,7 @@
         </p>
         <a href="#">Подробнее</a>
       </div>
-      <div class="about-company__year"><p>2005</p></div>
+      <div class="about-company__year"><!--<p>2005</p>--></div>
     </section>
     <section class="goods">
       <div class="goods__wrapper">
@@ -130,10 +130,13 @@
     <section class="feedback">
       <div class="feedback__wrapper">
         <form action="#" class="feedback__form" method="post">
+          <label for="name" aria-label="Введите имя"></label>
+          <label for="phone" aria-label="Введите телефон"></label>
+          <label for="question" aria-label="Задайте вопрос"></label>
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
-          <input type="text" placeholder="Имя"/>
-          <input type="tel" placeholder="Телефон">
+          <input type="text" placeholder="Имя" id="name"/>
+          <input type="tel" placeholder="Телефон" id="phone">
           <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
           <button type="submit">Задать вопрос</button>
           <div class="feedback__checkbox">
@@ -180,34 +183,34 @@
     </div>
     <div class="page-footer__navigation navigation">
       <p class="navigation__name">Разделы сайта</p>
-      <button class="navigation__button button"></button>
+      <button class="navigation__button button" aria-label="Открыть главное меню"></button>
       <ul class="navigation__list">
         <li class="navigation__item">
           <a href="#">О компании</a>
         </li>
         <li class="navigation__item">
-          <a href="#">Продукты</a>
-        </li>
-        <li class="navigation__item">
-          <a href="#">Производство печатных плат</a>
-        </li>
-        <li class="navigation__item">
-          <a href="#">Монтаж печатных плат</a>
-        </li>
-        <li class="navigation__item">
           <a href="#">Комплектующие</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#">Продукты</a>
         </li>
         <li class="navigation__item">
           <a href="#">Доставка</a>
         </li>
         <li class="navigation__item">
+          <a href="#">Производство печатных плат</a>
+        </li>
+        <li class="navigation__item">
           <a href="#">Контакты</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#">Монтаж печатных плат</a>
         </li>
       </ul>
     </div>
     <div class="page-footer__contacts contacts">
       <p class="contacts__name">Наш офис</p>
-      <button class="contacts__button button button--opened"></button>
+      <button class="contacts__button button button--opened" aria-label="Открыть меню контактов"></button>
       <ul class="contacts__list">
         <li class="contacts__item">
           <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
@@ -228,9 +231,9 @@
     <div class="copyright__wrapper">
       <p class="copyright__desktop-text">Все права защищены</p>
       <p class="copyright__desktop-text">1999-2018 SD Service Devices</p>
-      <p>Условия конфиденциальности</p>
+      <p><a href="#">Условия конфиденциальности</a></p>
     </div>
-    <p>Developed by wow studio</p>
+    <p>Developed by <a href="#">wow studio</a></p>
   </div>
 </footer>
 <div class="overlay overlay--closed"></div>
@@ -239,12 +242,12 @@
   <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
   <button type="button" class="popup__close"></button>
   <form action="#" class="popup__form" method="post">
-    <input type="text" id="your-name" placeholder="Имя"/>
-    <input type="tel" id="your-phone" placeholder="Телефон">
-    <textarea name="question" id="your-message" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+    <input type="text" id="your-name" placeholder="Имя" required/>
+    <input type="tel" id="your-phone" placeholder="Телефон" required>
+    <textarea name="question" id="your-message" cols="30" rows="10" placeholder="Ваш вопрос" required></textarea>
     <button type="submit">Отправить</button>
     <div class="popup__checkbox">
-      <input type="checkbox" name="your-accept" id="your-accept" checked>
+      <input type="checkbox" name="your-accept" id="your-accept" checked required>
       <label for="your-accept"><span class="checkbox-indicator"></span>
         Я согласен на обработку персональных данных
       </label>
@@ -359,7 +362,7 @@
       />
   </symbol>
 </svg>
-
+<script src="https://unpkg.com/imask"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

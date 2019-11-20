@@ -4,29 +4,30 @@
 
 
   &__wrapper {
-    width: 1440px;
+    width: 1220px;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     padding-top: 90px;
     padding-bottom: 113px;
-    padding-right: 138px;
+    padding-right: 26px;
 
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
+    flex-direction: row;
     position: relative;
 
     &::before {
       content: "";
       position: absolute;
       top: 160px;
-      left: 111px;
-      width: 511px;
-      height: 288px;
+      right: calc(50% + 60px);
+      width: 100%;
+      height: 100%;
       background-image: url("../img/airplane.png");
       background-repeat: no-repeat;
-      background-size: 100%;
+      background-position: top 0 right 40px;
+      background-size: 42%;
       z-index: 2;
     }
 
@@ -83,6 +84,10 @@
       width: 100%;
     }
 
+    & label:not(:last-of-type) {
+      @include visually-hidden();
+    }
+
     & input {
       width: 270px;
       height: 50px;
@@ -91,6 +96,7 @@
       padding-right: 19px;
       background: rgba(255, 255, 255, 0.1);
       border: none;
+      border-radius: 0;
       color: #FFFFFF;
 
       &::placeholder {
@@ -108,6 +114,7 @@
       background: rgba(255, 255, 255, 0.1);
       color: #FFFFFF;
       resize: none;
+      border-radius: 0;
 
       &::placeholder {
         color: #FFFFFF;
@@ -154,6 +161,10 @@
       display: block;
       margin-left: 45px;
       margin-top: 10px;
+
+      &:hover {
+        color: #1B2D37;
+      }
     }
 
     & input + label .checkbox-indicator {
@@ -180,6 +191,17 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+  }
+}
+
+@media (max-width: $desktop-width) {
+  .feedback {
+    &__wrapper {
+      width: 100%;
+      max-width: 1220px;
+
+    }
+
   }
 }
 
