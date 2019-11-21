@@ -68,7 +68,9 @@ function toggleMenu(elem, btn) {
 if (width < 768) {
   navBlock.addEventListener("click", function () {
     toggleMenu(navBlock, navCoverButton);
-    toggleMenu(contactsBlock, contactsCoverButton);
+    if (contactsBlock.classList.contains('menu-opened')) {
+      toggleMenu(contactsBlock, contactsCoverButton);
+    }
   });
   navBlock.classList.add("menu-closed");
   navCoverButton.classList.add("button--closed");
@@ -77,16 +79,19 @@ if (width < 768) {
 if (width < 768) {
   contactsBlock.addEventListener("click", function () {
     toggleMenu(contactsBlock, contactsCoverButton);
-    toggleMenu(navBlock, navCoverButton);
+    if (navBlock.classList.contains('menu-opened')) {
+      toggleMenu(navBlock, navCoverButton);
+    }
   });
-  contactsBlock.classList.add("menu-opened");
+  contactsBlock.classList.add("menu-closed");
+  contactsCoverButton.classList.add("button--closed");
 }
 
 // Открытие всплывающего окна и навешивание обработчиков события для его закрытия
 function openPopup() {
   if (modalWrapper) {
     modalWrapper.classList.remove("modal-wrapper--closed");
-    document.body.style.overflow = 'hidden';
+
   }
   if (overlay) {
     overlay.classList.remove("overlay--closed");
@@ -96,6 +101,7 @@ function openPopup() {
   if (popupNameInput) {
     popupNameInput.focus()
   }
+  document.body.style.overflow = 'hidden';
   document.addEventListener("keydown", popupEscPressHandler);
 }
 
