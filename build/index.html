@@ -129,18 +129,20 @@
     </section>
     <section class="feedback">
       <div class="feedback__wrapper">
-        <form action="#" class="feedback__form" method="post">
+        <form action="#" class="feedback__form" autocomplete="off" enctype="multipart/form-data" method="post">
           <label for="name" aria-label="Введите имя"></label>
           <label for="phone" aria-label="Введите телефон"></label>
-          <label for="question" aria-label="Задайте вопрос"></label>
+          <label for="message" aria-label="Задайте вопрос"></label>
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
-          <input type="text" placeholder="Имя" id="name">
-          <input type="tel" placeholder="Телефон" id="phone">
-          <textarea name="question" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+          <input type="text" placeholder="Имя" id="name" required="">
+          <span class="feedback__error-message feedback__error-message--name"></span>
+          <input type="tel" placeholder="Телефон" id="phone" required="">
+          <span class="feedback__error-message feedback__error-message--phone"></span>
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="Ваш вопрос" required=""></textarea>
           <button type="submit">Задать вопрос</button>
           <div class="feedback__checkbox">
-            <input type="checkbox" name="accept" id="accept" checked="">
+            <input type="checkbox" name="accept" id="accept" checked="" required="">
             <label for="accept"><span class="checkbox-indicator"></span>
               Я согласен на обработку персональных данных
             </label>
@@ -237,13 +239,15 @@
   </div>
 </footer>
 <div class="overlay overlay--closed"></div>
-<section class="popup popup--closed">
+<section class="popup popup--main popup--closed">
   <h2>Закажите звонок</h2>
   <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
   <button type="button" class="popup__close"></button>
-  <form action="#" class="popup__form" method="post">
+  <form action="https://echo.htmlacademy.ru" enctype="multipart/form-data" class="popup__form" method="post" autocomplete="off" id="popup__form">
     <input type="text" id="your-name" placeholder="Имя" required="">
+    <span class="popup__error-message popup__error-message--name"></span>
     <input type="tel" id="your-phone" placeholder="Телефон" required="">
+    <span class="popup__error-message popup__error-message--phone"></span>
     <textarea name="question" id="your-message" cols="30" rows="10" placeholder="Ваш вопрос" required=""></textarea>
     <button type="submit">Отправить</button>
     <div class="popup__checkbox">
@@ -254,6 +258,22 @@
     </div>
   </form>
 </section>
+
+<template id="success">
+  <section class="popup popup--success">
+    <h2>Ваша заявка отправлена</h2>
+    <p>Спасибо за Ваше участие, ваша заявка уже поступила к нам. В ближайшее время мы свяжемся с Вами.</p>
+    <button type="button" class="popup__button popup__button--success">ЗАКРЫТЬ ОКНО</button>
+  </section>
+</template>
+
+<template id="error">
+  <section class="popup popup--error">
+    <h2>Что-то пошло не так!</h2>
+    <p>Возможно, произошла ошибка</p>
+    <button type="button" class="popup__button popup__button--error">OK</button>
+  </section>
+</template>
 <svg display="none">
   <symbol viewBox="0 0 52 52" id="icon-logo">
     <path d="M32.0668 13.8665C33.1952 13.8665 34.1485 14.5936 34.5073 15.5998H43.4929C43.8517 14.5936 44.805 13.8665 45.9334 13.8665C47.3669 13.8665 48.5334 15.033 48.5334 16.4664C48.5334 17.8999 47.3669 19.0664 45.9334 19.0664C44.805 19.0664 43.8517 18.3392 43.4929 17.3331H34.5064C34.1476 18.3392 33.1943 19.0664 32.0659 19.0664C30.6324 19.0664 29.4659 17.8999 29.4659 16.4664C29.4659 15.033 30.6333 13.8665 32.0668 13.8665ZM45.9334 17.3331C46.411 17.3331 46.8001 16.9448 46.8001 16.4664C46.8001 15.988 46.411 15.5998 45.9334 15.5998C45.4559 15.5998 45.0668 15.988 45.0668 16.4664C45.0668 16.9448 45.4559 17.3331 45.9334 17.3331ZM32.0668 17.3331C32.5443 17.3331 32.9334 16.9448 32.9334 16.4664C32.9334 15.988 32.5443 15.5998 32.0668 15.5998C31.5892 15.5998 31.2001 15.988 31.2001 16.4664C31.2001 16.9448 31.5892 17.3331 32.0668 17.3331Z" fill="#00B2FF"></path>

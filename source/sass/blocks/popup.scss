@@ -5,7 +5,6 @@
   padding: 30px 40px 36px 40px;
   position: fixed;
   background-color: #00b2ff;
-  /*top: 137px;*/
   top: calc((100vh - 605px) / 2);
   left: calc(50% - 245px);
   z-index: 10;
@@ -89,7 +88,7 @@
       padding-right: 19px;
       margin-bottom: 31px;
       background: rgba(255, 255, 255, 0.1);
-      border: none;
+      border: 1px solid transparent;
       color: #FFFFFF;
 
       &::placeholder {
@@ -184,6 +183,61 @@
       background-image: url("../img/checkbox-ok.svg");
       background-repeat: no-repeat;
       background-position: center;
+    }
+  }
+
+  &__button {
+    @include button-style();
+    width: 100%;
+    height: 45px;
+    margin-top: 26px;
+    border: 1px solid #FFFFFF;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #00b2ff;
+      color: #00b2ff;
+      background-color: #FFFFFF;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__error-message {
+    font-size: 13px;
+    color: crimson;
+
+    &--name {
+      position: absolute;
+      top: 60px;
+      left: 15px;
+    }
+
+    &--phone {
+      position: absolute;
+      top: 143px;
+      left: 15px;
+    }
+  }
+
+  &--success,
+  &--error {
+    min-height: 200px;
+    top: calc((100vh - 200px) / 2);
+
+    & h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    & p {
+      width: 100%;
+      text-align: center;
+      margin: 0;
     }
   }
 }

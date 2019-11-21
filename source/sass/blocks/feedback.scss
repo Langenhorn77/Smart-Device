@@ -95,7 +95,7 @@
       padding-left: 19px;
       padding-right: 19px;
       background: rgba(255, 255, 255, 0.1);
-      border: none;
+      border: 1px solid transparent;
       border-radius: 0;
       color: #FFFFFF;
 
@@ -192,7 +192,25 @@
       background-position: center;
     }
   }
+
+  &__error-message {
+    font-size: 11px;
+    color: red;
+
+    &--name {
+      position: absolute;
+      top: 190px;
+      left: 5px;
+    }
+
+    &--phone {
+      position: absolute;
+      top: 190px;
+      left: calc(50% + 20px);
+    }
+  }
 }
+
 
 @media (max-width: $desktop-width) {
   .feedback {
@@ -318,6 +336,65 @@
       & input + label .checkbox-indicator,
       & input:checked + label .checkbox-indicator {
         left: 0;
+      }
+    }
+
+    &__error-message {
+      font-size: 11px;
+      color: red;
+
+      &--name {
+        position: absolute;
+        top: 155px;
+        left: 5px;
+      }
+
+      &--phone {
+        position: absolute;
+        top: 235px;
+        left: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 453px) {
+  .feedback {
+    &__error-message {
+      font-size: 11px;
+      color: red;
+
+      &--name {
+        position: absolute;
+        top: 195px;
+        left: 5px;
+      }
+
+      &--phone {
+        position: absolute;
+        top: 275px;
+        left: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 346px) {
+  .feedback {
+    &__error-message {
+      font-size: 11px;
+      color: red;
+
+      &--name {
+        position: absolute;
+        top: 215px;
+        left: 5px;
+      }
+
+      &--phone {
+        position: absolute;
+        top: 295px;
+        left: 5px;
       }
     }
   }

@@ -11,6 +11,13 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  & .no-scroll {
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    bottom: 0;
+  }
 }
 
 .visually-hidden {
@@ -39,5 +46,21 @@ body {
 }
 
 .menu-closed ul {
-  display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  }
+
+.menu-opened ul {
+  visibility: visible;
+  opacity: 1;
+  position: static;
+  z-index: 5;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s;
 }
+
