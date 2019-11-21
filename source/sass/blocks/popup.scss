@@ -1,13 +1,15 @@
 .popup {
   width: 490px;
   min-height: 605px;
+  max-height: 1200px;
   box-sizing: border-box;
   padding: 30px 40px 36px 40px;
-  position: fixed;
+  position: absolute;
   background-color: #00b2ff;
   top: calc((100vh - 605px) / 2);
   left: calc(50% - 245px);
   z-index: 10;
+  overflow: auto;
 
   & h2 {
     @include h2-style();

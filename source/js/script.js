@@ -1,7 +1,7 @@
 const requestButton = document.querySelector("#request-button");
 
 const overlay = document.querySelector(".overlay");
-
+const modalWrapper = document.querySelector(".modal-wrapper");
 
 // Элементы всплывающего окна
 const popupWindow = document.querySelector(".popup--main");
@@ -68,6 +68,7 @@ function toggleMenu(elem, btn) {
 if (width < 768) {
   navBlock.addEventListener("click", function () {
     toggleMenu(navBlock, navCoverButton);
+    toggleMenu(contactsBlock, contactsCoverButton);
   });
   navBlock.classList.add("menu-closed");
   navCoverButton.classList.add("button--closed");
@@ -76,15 +77,15 @@ if (width < 768) {
 if (width < 768) {
   contactsBlock.addEventListener("click", function () {
     toggleMenu(contactsBlock, contactsCoverButton);
+    toggleMenu(navBlock, navCoverButton);
   });
-  contactsBlock.classList.add("menu-closed");
-  contactsCoverButton.classList.add("button--closed");
+  contactsBlock.classList.add("menu-opened");
 }
 
 // Открытие всплывающего окна и навешивание обработчиков события для его закрытия
 function openPopup() {
-  if (popupWindow) {
-    popupWindow.classList.remove("popup--closed");
+  if (modalWrapper) {
+    modalWrapper.classList.remove("modal-wrapper--closed");
     document.body.style.overflow = 'hidden';
   }
   if (overlay) {
@@ -101,7 +102,7 @@ function openPopup() {
 // Закрытие всплывающего окна и удаление обработчиков события для его закрытия
 
 function closePopup() {
-  popupWindow.classList.add("popup--closed");
+  modalWrapper.classList.add("modal-wrapper--closed");
   overlay.classList.add("overlay--closed");
   overlay.removeEventListener("click", overlayClickHandler);
   document.removeEventListener("keydown", popupEscPressHandler);
@@ -133,7 +134,7 @@ function overlayClickHandler() {
 //Создание маски для input
 
 const maskOptions = {
-  mask: '{8}0000000000'
+  mask: '+{7}(000)000-00-00'
 };
 const popupMask = IMask(popupPhoneInput, maskOptions);
 const footerMask = IMask(footerFormPhoneInput, maskOptions);
@@ -148,7 +149,8 @@ function createResultPopup(result) {
   let resultItem = resultTemplate.cloneNode(true);
   fragment.appendChild(resultItem);
 
-  popupWindow.parentNode.insertBefore(fragment, popupWindow);
+  modalWrapper.parentNode.insertBefore(fragment, modalWrapper);
+  document.body.style.overflow = 'hidden';
 }
 
 // Успех загрузки
@@ -160,6 +162,7 @@ function sendFormSuccessHandler() {
 
   function closeSuccessWindow() {
     successWindow.remove();
+    document.body.style.overflow = 'visible';
   }
 
   document.addEventListener('click', closeSuccessWindow);
@@ -180,6 +183,7 @@ function sendFormErrorHandler() {
 
   function closeErrorWindow() {
     errorWindow.remove();
+    document.body.style.overflow = 'visible';
   }
 
   document.addEventListener('click', closeErrorWindow);
@@ -229,11 +233,11 @@ const nameInputRules = {
 
 const phoneInputRules = {
   length: [
-    11,
-    'Номер телефона должен быть 11-значным!'
+    16,
+    'Номер телефона должен быть 16-значным!'
   ],
   pattern: [
-    /^[0-9]+$/,
+    /^\+7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$/,
     'Номер телефона должен состоять только из цифр!'
   ]
 };
@@ -245,8 +249,6 @@ function CustomValidation() {
 CustomValidation.prototype = {
   nameInvalidities: [],
   phoneInvalidities: [],
-  nameFooterInvalidities: [],
-  phoneFooterInvalidities: [],
 
   // Валидация поля Имя
 
@@ -280,11 +282,10 @@ CustomValidation.prototype = {
         result = false
       }
 
-      for (let i = 0; i < inputFieldValues.length; i++) {
-        if (!inputFieldValues[i].match(phoneInputRules.pattern[0])) {
-          this.addInvalidity(this.phoneInvalidities, phoneInputRules.pattern[1]);
-          result = false
-        }
+
+      if (!inputFieldValues.match(phoneInputRules.pattern[0])) {
+        this.addInvalidity(this.phoneInvalidities, phoneInputRules.pattern[1]);
+        result = false
       }
     }
     return result;

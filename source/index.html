@@ -239,25 +239,28 @@
   </div>
 </footer>
 <div class="overlay overlay--closed"></div>
-<section class="popup popup--main popup--closed">
-  <h2>Закажите звонок</h2>
-  <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-  <button type="button" class="popup__close"></button>
-  <form action="https://echo.htmlacademy.ru" enctype="multipart/form-data" class="popup__form" method="post" autocomplete="off" id="popup__form">
-    <input type="text" id="your-name" placeholder="Имя" required/>
-    <span class="popup__error-message popup__error-message--name"></span>
-    <input type="tel" id="your-phone" placeholder="Телефон" required>
-    <span class="popup__error-message popup__error-message--phone"></span>
-    <textarea name="question" id="your-message" cols="30" rows="10" placeholder="Ваш вопрос" required></textarea>
-    <button type="submit">Отправить</button>
-    <div class="popup__checkbox">
-      <input type="checkbox" name="your-accept" id="your-accept" checked required>
-      <label for="your-accept"><span class="checkbox-indicator"></span>
-        Я согласен на обработку персональных данных
-      </label>
-    </div>
-  </form>
-</section>
+
+<div class="modal-wrapper modal-wrapper--closed">
+  <section class="popup popup--main">
+    <h2>Закажите звонок</h2>
+    <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+    <button type="button" class="popup__close"></button>
+    <form action="https://echo.htmlacademy.ru" enctype="multipart/form-data" class="popup__form" method="post" autocomplete="off" id="popup__form">
+      <input type="text" id="your-name" placeholder="Имя" required/>
+      <span class="popup__error-message popup__error-message--name"></span>
+      <input type="tel" id="your-phone" placeholder="Телефон" required>
+      <span class="popup__error-message popup__error-message--phone"></span>
+      <textarea name="question" id="your-message" cols="30" rows="10" placeholder="Ваш вопрос" required></textarea>
+      <button type="submit">Отправить</button>
+      <div class="popup__checkbox">
+        <input type="checkbox" name="your-accept" id="your-accept" checked required>
+        <label for="your-accept"><span class="checkbox-indicator"></span>
+          Я согласен на обработку персональных данных
+        </label>
+      </div>
+    </form>
+  </section>
+</div>
 
 <template id="success">
   <section class="popup popup--success">

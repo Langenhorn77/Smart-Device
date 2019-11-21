@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  overflow-y: scroll;
 }
 
 body {
@@ -12,12 +13,6 @@ body {
   display: flex;
   flex-direction: column;
 
-  & .no-scroll {
-    overflow: hidden;
-    position:fixed;
-    top:0;
-    bottom: 0;
-  }
 }
 
 .visually-hidden {
@@ -56,11 +51,33 @@ body {
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
   }
 
+.menu-opened {
+  pointer-events:none
+}
+
 .menu-opened ul {
   visibility: visible;
   opacity: 1;
   position: static;
   z-index: 5;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s;
+}
+
+.menu-opened a {
+  pointer-events: auto;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 100;
+}
+
+.modal-wrapper--closed {
+  display: none;
 }
 
