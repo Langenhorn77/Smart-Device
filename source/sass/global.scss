@@ -56,9 +56,6 @@ body {
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
   }
 
-.menu-opened {
-  /*pointer-events:none*/
-}
 
 .menu-opened ul {
   visibility: visible;
@@ -67,10 +64,6 @@ body {
   z-index: 5;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s;
 }
-
-/*.menu-opened a {
-  pointer-events: auto;
-}*/
 
 .modal-wrapper {
   width: 100%;
